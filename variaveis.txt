@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+var (
+	nome string
+	n1   int
+	n2   int32
+)
+
+func main() {
+	mensagem := "Aula 01 - Go 101"
+	fmt.Println(mensagem)
+
+	var a, b, c int32
+	fmt.Println(a, b, c)
+
+	var d, f, s = true, 2.3, "Olá"
+	fmt.Println(d, f, s)
+
+	var total int
+	total++
+	fmt.Println("Total:", total)
+
+	nome = "Thiago Temporin"
+	fmt.Println("Hello", nome, "!")
+
+	var x, y = 10, 20
+	fmt.Println(x, y)
+	x, y = y, x
+	fmt.Println(x, y)
+}

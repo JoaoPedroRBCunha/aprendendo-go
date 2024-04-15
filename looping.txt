@@ -1,0 +1,38 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+    //slice
+	nomes := []string{"Tiago", "Daniel", "Maria", "Marta"}
+	for i := 0; i < len(nomes); i++ {
+		fmt.Println(nomes[i])
+	}
+
+    var elemento [10]int
+	fmt.Println(elemento)
+
+	// for k, nome := range nomes
+	for _, nome := range nomes {
+		fmt.Println(nome)
+	}
+
+	var j int
+	for j < len(nomes) {
+		fmt.Println(nomes[j])
+		j++
+	}
+
+	var k int
+	for {
+		if k > 4 {
+			break
+		}
+		fmt.Println(k)
+		k++
+
+	}
+
+}

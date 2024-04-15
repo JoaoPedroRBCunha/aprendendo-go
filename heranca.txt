@@ -1,0 +1,43 @@
+package main
+
+import (
+	"fmt"
+)
+
+type Pessoa struct {
+	Nome   string
+	Idade  uint8
+	Status bool
+}
+
+type PessoaFisica struct {
+	Pessoa
+	Cpf string
+}
+
+func (pf PessoaFisica) String() string {
+	return fmt.Sprintf("Olá, meu nome é %s e eu tenho %d anos.\n", pf.Nome, pf.Idade)
+}
+
+type PessoaJuridica struct {
+	Pessoa
+	Cnpj string
+}
+
+func (pj PessoaJuridica) String() string {
+	return fmt.Sprintf("Olá, meu nome é %s e eu tenho %d anos.\n", pj.Nome, pj.Idade)
+}
+
+func main() {
+	PF := PessoaFisica{
+		Pessoa{Nome: "João", Idade: 18},
+		"000.000.000-00",
+	}
+	fmt.Println(PF)
+
+	PJ := PessoaJuridica{
+		Pessoa{Nome: "Osvaldo", Idade: 12},
+		"000.001.000-00",
+	}
+	fmt.Println(PJ)
+}

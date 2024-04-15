@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+)
+
+type Pessoa struct {
+	Nome      string
+	Sobrenome string
+	Idade     uint8
+	Status    bool
+	cpf       string
+}
+
+func main() {
+	var p Pessoa
+	p.Nome = "Orlando"
+	p.Idade = 3
+	fmt.Println(p)
+
+	t := Pessoa{
+		Nome:      "Tiago",
+		Sobrenome: "Temporin",
+		Idade:     31,
+		Status:    true,
+		cpf:       "2",
+	}
+	fmt.Println(t.Nome, t.Idade, t.cpf)
+	fmt.Println(t)
+
+}

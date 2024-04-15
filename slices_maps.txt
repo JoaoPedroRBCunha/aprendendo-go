@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	nomes := []string{"Tiago", "Dani", "Marcos", "Maria"}
+	fmt.Println(nomes, len(nomes), cap(nomes))
+
+	nomes = append(nomes, "Rafael")
+	fmt.Println(nomes, len(nomes), cap(nomes))
+
+	nomes = append(nomes, "Rubia")
+	fmt.Println(nomes, len(nomes), cap(nomes))
+
+	idades := make(map[string]uint8)
+	idades["Tiago"] = 31
+	idades["Dani"] = 36
+	idades["Maria"] = 23
+
+	val, ok := idades["Dani"]
+	if ok == true {
+		fmt.Println(val, ok)
+	} else {
+		fmt.Println("Não possui registro")
+	}
+
+}

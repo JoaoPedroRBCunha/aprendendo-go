@@ -1,1 +1,1 @@
-Learning about Go
+Aprendendo sobre a linguagem de programação Go.

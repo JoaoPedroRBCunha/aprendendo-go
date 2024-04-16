@@ -2,58 +2,35 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"os"
+	"math"
 )
 
-var (
-	cara, coroa int
-)
-
-func lancarMoeda(lado string) {
-	switch lado {
-	case "cara":
-		cara++
-
-	case "coroa":
-		coroa++
-
-	default:
-		fmt.Println("Caiu em pé")
+func triangulo(A, B, C float64) string {
+	if A > B+C && B > A+C && C > A+B {
+		return fmt.Sprintln("NAO FORMA TRIANGULO")
 	}
+	if math.Pow(A, 2) == math.Pow(B, 2)+math.Pow(C, 2) {
+		return fmt.Sprintln("TRIANGULO RETANGULO")
+	}
+	if math.Pow(A, 2) > math.Pow(B, 2)+math.Pow(C, 2) {
+		return fmt.Sprintln("TRIANGULO OBTUSANGULO")
+	}
+	if math.Pow(A, 2) < math.Pow(B, 2)+math.Pow(C, 2) {
+		return fmt.Sprintln("TRIANGULO ACUTANGULO")
+	}
+	if A == B && A == C && B == C {
+		return fmt.Sprintln("TRIANGULO EQUILATERO")
+	}
+	if A == B || A == C || B == C {
+		return fmt.Sprintln("TRIANGULO ISOSCELES")
+	}
+	return ""
 }
 
 func main() {
-	a, b := 10, 10
-	if a > b {
-		fmt.Println("a é maior que b")
-	} else if a < b {
-		fmt.Println("b é maior que a")
-	} else {
-		fmt.Println("a é igual a b")
-	}
+	var A, B, C float64
+	fmt.Scan(&A, &B, &C)
 
-	switch {
-	case a > b:
-		fmt.Println("a é maior que b")
-
-	case a < b:
-		fmt.Println("b é maior que a")
-
-	default:
-		fmt.Println("a é igual a b")
-	}
-
-	file, err := os.Open("Hello.txt")
-	if err != nil {
-		log.Panic(err)
-	}
-
-	data := make([]byte, 100)
-	if _, erro := file.Read(data); erro != nil {
-		log.Panic(erro)
-	}
-
-	fmt.Println(string(data))
+	fmt.Println(triangulo(A, B, C))
 
 }

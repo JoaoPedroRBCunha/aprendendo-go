@@ -1,0 +1,47 @@
+- go mod init [nome do modulo] - para iniciar o modulo e poder importar bibliotecas.
+
+- Quando se cria uma função com a primeira letra maiúscula ela pode ser utilizada em outro arquivo, e uma função com a primeira 
+  letra minúscula não pode.
+
+- var numero2 uint32 = -10
+  uint não pega número negativo
+
+  alias - termo utilizado
+  int32 == rune
+
+  alias - termo utilizado
+  uint8 == byte
+
+- aspas simples é o mais próximo de Char.
+
+- var erro error = errors.New("Inválido")
+    erro = nome da variável
+    error = tipo da variável
+    erros = nome do pacote
+
+- inferência de tipos (variavel2 := "Variável 2)
+
+- O tanto de espaço que você colocar antes ou após uma aspa ele irá obdecer e será utilizado.
+
+- fmt.Println(variavel5 + variavel6) = irá concatenar (juntar) e apresentar as duas variáveis.
+- fmt.Println(variavel5, variavel6) = irá separar por um espaço e apresentar as duas variaveis.
+
+- A constante não precisa necessariamente ser utilizada igual uma variável, posso somente cria-la e não utiliza-la, 
+  porém é uma boa prática manter apenas as que estão e irão ser utilizadas.
+
+- Em go você pode retornar dois valores na mesma função.
+
+- Em uma função de receber valores, o _ (underline) pode ser utilizado para ignorar o valor, e vai ser 
+  inexistente sem receber o valor.
+
+- Não pode somar números que tem o tipo de dado diferente, como exemplo:
+  var numero1 int16 = 10
+  var numero2 int16 = 8
+  soma := numero1 + numero2
+
+- Pode usar inferência de tipos com duas variáveis iguais, como exemplo:
+  var numero1 int16 = 10
+	var numero2 int16 = 8
+	soma2 := numero1 + numero2
+
+

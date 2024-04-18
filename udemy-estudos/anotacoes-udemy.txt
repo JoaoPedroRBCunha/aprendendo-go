@@ -36,12 +36,84 @@
 
 - Não pode somar números que tem o tipo de dado diferente, como exemplo:
   var numero1 int16 = 10
-  var numero2 int16 = 8
+  var numero2 int32 = 8
   soma := numero1 + numero2
 
-- Pode usar inferência de tipos com duas variáveis iguais, como exemplo:
+- Pode usar inferência de tipos com duas variáveis com tipos de dados iguais, como exemplo:
   var numero1 int16 = 10
 	var numero2 int16 = 8
 	soma2 := numero1 + numero2
 
+- Ponteiro é uma referência de memória
+    *int (pode ser int, float, string) - identifica que é uma criação de um ponteiro 
+    &variavel3 - utilizar esse "&" faz com que pegue a referência daquela variável
+    *variavel4 - utilizar esse "*" (asterisco) é uma desreferênciação,
+	  pois ele irá pegar o valor da variável e não o local onde está alocada
+    exemplo:
+      var variavel3 int = 10
+	    var variavel4 *int = &variavel3
+      fmt.Println(*variavel4)
 
+- A diferença da criação de um array pra um slice é no definição de elementos,
+	pois no slice não se define tamanho e no array sim
+
+- Slice é uma fatia de um array.
+    append(slice, ...) - adiciona mais um ou vários elementos dentro do slice e aumenta sua capacidade.
+	  len(slice) - número de elementos dentro do slice.
+	  cap(slice) - capacidade máxima de números dentro do slice, porém com append(slice, ...) você pode aumentar essa capacidade.
+
+- Slice pode ser criado pegando todos os valores de um array e adicionando mais alguns.
+
+- Após a capacidade do slice ser estourada o Go vai aumentar um de tamanho (len - lenght) e dobrar sua capacidade.
+
+- Slice pode ser criado com o make sem o parametro de capacidade.
+
+- if init - if outroNumero := numero; outroNumero > 0 
+
+  fmt.Println(outroNumero) - a variável criada no if init não pode ser acessada fora do seu if criado.
+
+- fallthrough(utilizado no switch) - utilizado para que seja executado/apresentado/armazenado seja o próximo item do switch
+  sem precisar verificar se o próximo item está correto ou não.
+  exemplo:
+  numero = 1
+  case numero == 1:
+		diaDaSemana = "Domingo"
+		fallthrough // nesse caso o diaDaSemana armazenado seria "Segunda", por conta do fallthrough
+	case numero == 2:
+		diaDaSemana = "Segunda"
+
+- o for possui 4 modos, para memorizar (for while, for normal, for range, for infinito)
+    for while - for i < 10 { }
+    for normal - for i := 0; i < 10; i++ { }
+    for range - for indice, valor := range nomes { }
+    for infito - for { }
+
+- No for range pode ser utilizado por arrays, slices e maps, como exemplos:
+  arrays e slices:
+  nomes := []string{"João", "Davi", "José"}
+	for indice, nomes := range nomes {
+		fmt.Println(indice, nomes)
+	}
+
+  maps:
+    usuario := map[string]string{
+		"nome":      "Leonardo",
+		"sobrenome": "Leoncio",
+	}
+  for chave, valor := range usuario {
+		fmt.Println(chave, valor)
+	}
+
+- Não pode utilizar for range em struct
+
+- As funções variáticas o parametro que recebe varios valores é um slice - func soma(numeros ...int) int,
+  fazendo que possamos utilizar o for range para manipulação de dados
+
+- Uma função variática só pode ter um parametro váriatico por função e se por acaso tiver 2 ou mais, 
+  ele tem que ser o ultimo parametro, exemplo:
+  
+func escrever(texto string, numeros ...int) {
+	for _, numero := range numeros {
+		fmt.Println(texto, numero)
+	}
+}

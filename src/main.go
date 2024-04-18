@@ -2,35 +2,27 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-func triangulo(A, B, C float64) string {
-	if A > B+C && B > A+C && C > A+B {
-		return fmt.Sprintln("NAO FORMA TRIANGULO")
-	}
-	if math.Pow(A, 2) == math.Pow(B, 2)+math.Pow(C, 2) {
-		return fmt.Sprintln("TRIANGULO RETANGULO")
-	}
-	if math.Pow(A, 2) > math.Pow(B, 2)+math.Pow(C, 2) {
-		return fmt.Sprintln("TRIANGULO OBTUSANGULO")
-	}
-	if math.Pow(A, 2) < math.Pow(B, 2)+math.Pow(C, 2) {
-		return fmt.Sprintln("TRIANGULO ACUTANGULO")
-	}
-	if A == B && A == C && B == C {
-		return fmt.Sprintln("TRIANGULO EQUILATERO")
-	}
-	if A == B || A == C || B == C {
-		return fmt.Sprintln("TRIANGULO ISOSCELES")
-	}
-	return ""
-}
-
 func main() {
-	var A, B, C float64
-	fmt.Scan(&A, &B, &C)
+	var renda, taxa, impostoDeRenda float32
+	fmt.Scan(&renda)
 
-	fmt.Println(triangulo(A, B, C))
+	switch {
+	case renda <= 2000.00:
+		fmt.Println("Isento")
+	case renda <= 3000.00:
+		taxa = 0.08
+		impostoDeRenda = renda * taxa
+		fmt.Printf("R$ %f\n", impostoDeRenda)
+	case renda <= 4500.00:
+		taxa = 0.18
+		impostoDeRenda = renda * taxa
+		fmt.Printf("R$ %f\n", impostoDeRenda)
+	case renda > 4500.00:
+		taxa = 0.28
+		impostoDeRenda = renda * taxa
+		fmt.Printf("R$ %f\n", impostoDeRenda)
+	}
 
 }

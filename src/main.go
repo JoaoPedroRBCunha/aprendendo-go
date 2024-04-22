@@ -4,25 +4,24 @@ import (
 	"fmt"
 )
 
-func main() {
-	var renda, taxa, impostoDeRenda float32
-	fmt.Scan(&renda)
-
-	switch {
-	case renda <= 2000.00:
-		fmt.Println("Isento")
-	case renda <= 3000.00:
-		taxa = 0.08
-		impostoDeRenda = renda * taxa
-		fmt.Printf("R$ %f\n", impostoDeRenda)
-	case renda <= 4500.00:
-		taxa = 0.18
-		impostoDeRenda = renda * taxa
-		fmt.Printf("R$ %f\n", impostoDeRenda)
-	case renda > 4500.00:
-		taxa = 0.28
-		impostoDeRenda = renda * taxa
-		fmt.Printf("R$ %f\n", impostoDeRenda)
+func validaSenha(Senha int) (string, bool) {
+	if Senha == 2002 {
+		return fmt.Sprint("Acesso Permitido"), true
+	} else {
+		return fmt.Sprintf("Senha Invalida"), false
 	}
 
+}
+
+func main() {
+	for {
+		var Senha int
+		fmt.Scan(&Senha)
+		texto, ok := validaSenha(Senha)
+		if ok == true {
+			fmt.Println(texto)
+			break
+		}
+		fmt.Println(texto)
+	}
 }

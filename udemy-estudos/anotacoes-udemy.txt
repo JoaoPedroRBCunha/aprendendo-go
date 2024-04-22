@@ -1,5 +1,9 @@
 - go mod init [nome do modulo] - para iniciar o modulo e poder importar bibliotecas.
 
+- CTRL + C - para interromper o terminal em andamento
+
+- Função(func) main só pode ter uma por pacote(package).
+
 - Quando se cria uma função com a primeira letra maiúscula ela pode ser utilizada em outro arquivo, e uma função com a primeira 
   letra minúscula não pode.
 
@@ -19,7 +23,9 @@
     error = tipo da variável
     erros = nome do pacote
 
-- inferência de tipos (variavel2 := "Variável 2)
+- inferência de tipos (variavel2 := Variável 2)
+
+- Pode declarar a inferência de tipo assim - numero := float32(10.5)
 
 - O tanto de espaço que você colocar antes ou após uma aspa ele irá obdecer e será utilizado.
 
@@ -117,3 +123,44 @@ func escrever(texto string, numeros ...int) {
 		fmt.Println(texto, numero)
 	}
 }
+
+- defer - utilizado para adiar alguma parte do código e deixar para o final.
+
+- panic - utilizado para se algo acontecer dar um panico e a execução ser interrompida na mesma hora, e 
+  caso houver um defer com uma recover o código não vai ser interrompido.
+
+- recover - utilizado para recuperar e não fazer a execução ser parada pelo panic.
+
+- Função(func) init é inicializada primeiro que a função(func) main, e ele pode ter 1 por arquivo,
+  diferente da função main que só pode ter uma por pacote (package).
+
+- CONCORRÊNCIA != PARALELISMO
+
+- goroutine (go) - utilizado para mesmo que o aquele comando chamado não tenha terminado, já pode ir para a próxima linha
+  executar o próximo comando.
+
+- Métodos para usar o chanel (canal):
+
+  for {
+		mensagem, aberto := <-canal // <-canal - esperando que o canal receba um valor
+		if !aberto {
+			break
+		}
+		fmt.Println(mensagem)
+	}
+
+  // outro método de printar o canal
+	for mensagem2 := range canal {
+		fmt.Println(mensagem2)
+	}
+
+- Métodos para usar o chanel com buffer:
+  canal := make(chan string, 2)
+	canal <- "Olá mundo!"
+	canal <- "Programando em Go"
+
+	mensagem := <-canal
+	mensagem2 := <-canal
+
+	fmt.Println(mensagem)
+	fmt.Println(mensagem2)

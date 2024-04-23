@@ -1,27 +1,20 @@
 package main
 
-import (
-	"fmt"
-)
-
-func validaSenha(Senha int) (string, bool) {
-	if Senha == 2002 {
-		return fmt.Sprint("Acesso Permitido"), true
-	} else {
-		return fmt.Sprintf("Senha Invalida"), false
-	}
-
-}
+import "fmt"
 
 func main() {
-	for {
-		var Senha int
-		fmt.Scan(&Senha)
-		texto, ok := validaSenha(Senha)
-		if ok == true {
-			fmt.Println(texto)
-			break
+	var X, Y int
+	fmt.Scanln(&X, &Y)
+
+	count := 1
+	for i := 1; i <= Y; i++ {
+		fmt.Print(i)
+		if count < X && i != Y {
+			fmt.Print(" ")
+			count++
+		} else {
+			fmt.Println()
+			count = 1
 		}
-		fmt.Println(texto)
 	}
 }

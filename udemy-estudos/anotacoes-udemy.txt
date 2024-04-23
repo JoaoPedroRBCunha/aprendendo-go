@@ -164,3 +164,24 @@ func escrever(texto string, numeros ...int) {
 
 	fmt.Println(mensagem)
 	fmt.Println(mensagem2)
+
+- A função test dentro do Go foi feita justamente para se fazer testes e verificar se está tudo correto
+  em seu programa.
+
+- Pode ser Criado vários funções de teste com nome começando com Test, no arquivo [nome_do_arquivo]_test.go
+
+- t.Parallel() - utilizado para fazer funções em paralelo, tem que ser colocado no inicio de cada função
+
+
+- go test -v (utilizado no terminal)- para mostrar todos os testes feitos no _test.go
+
+- go test --cover (utilizado no terminal)- para saber se o nosso teste está cobrindo todos os casos de teste da função chamada
+
+- go test --coverprofile [nome_do_arquivo].txt (utilizado no terminal)- para criar um arquivo onde possa saber oque não está sendo 
+  coberto pelo test
+
+- go tool cover --func=[none_do_arquivo].txt (utilizado no terminal)- para ler o arquivo.txt e 
+  falar algumas informações sobre oque não foi coberto
+
+- go tool cover --html=[none_do_arquivo].txt (utilizado no terminal)- informações mais detalhadas e faceis de vizualizar, 
+  sendo mostrado em html no google

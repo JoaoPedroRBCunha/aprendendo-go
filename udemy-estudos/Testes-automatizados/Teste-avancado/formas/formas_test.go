@@ -6,6 +6,15 @@ import (
 	"testing"
 )
 
+func TestAreaRet(t *testing.T) {
+	ret := Retangulo{10, 12}
+	retArea := ret.Area()
+	retAreaEsperada := float64(120)
+	if retAreaEsperada != retArea {
+		t.Fatalf("O resultado esperado era %f e o apresentado foi %f", retAreaEsperada, retArea)
+	}
+}
+
 func TestArea(t *testing.T) {
 	// TDD - Test Drive Development
 	t.Run("Retângulo", func(t *testing.T) {

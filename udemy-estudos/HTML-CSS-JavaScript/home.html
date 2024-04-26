@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página</title>
+    <style>
+        body {
+            background-color: black
+        }
+        div {
+            color: wheat;
+        }
+        h2 {
+            font-size: 100px; font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body >
+    <div>
+        <h2> Página Principal </h2>
+
+        <h3> Olá, {{ .Nome }} </h3>
+        <h3> Seu email é: {{ .Email }} </h3>
+        
+        <button id="botao">Clique em mim!</button>
+
+        <script>
+            var botao = document.getElementById("botao");
+            botao.onclick = function() {
+                alert("Botão clicado com sucesso!");
+                console.log("teste bem executado!");
+            }
+        </script>
+
+    </div>
+    
+
+</body>
+</html>
+
+<!--
+
+    {
+        Nome: "João",
+        Email: "..."
+    }
+
+-->

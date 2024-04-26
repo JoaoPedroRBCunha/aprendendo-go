@@ -172,7 +172,6 @@ func escrever(texto string, numeros ...int) {
 
 - t.Parallel() - utilizado para fazer funções em paralelo, tem que ser colocado no inicio de cada função
 
-
 - go test -v (utilizado no terminal)- para mostrar todos os testes feitos no _test.go
 
 - go test --cover (utilizado no terminal)- para saber se o nosso teste está cobrindo todos os casos de teste da função chamada
@@ -185,3 +184,37 @@ func escrever(texto string, numeros ...int) {
 
 - go tool cover --html=[none_do_arquivo].txt (utilizado no terminal)- informações mais detalhadas e faceis de vizualizar, 
   sendo mostrado em html no google
+
+- JSON é utilizado para armazenar e transportar dados de um lugar pro outro, como mandar dados de um servidor para
+  uma página web ou vice-versa.
+
+- json.Marshal() - utilizado para converter um map ou struct para um json, retorna 2 valores (valores e erro)
+
+- json.Unmarshal() - utilizado para converter um json para um map ou struct 
+
+- json.Marshal() retorna um slice de bytes e o json.Unmarshal recebe um slice de bytes.
+
+- bytes.NewBuffer() - utilizado para conversão de bytes em strings, por exemplo em json.Marshal() pois retorna valores em byte.
+
+- Fatal é um erro que após ser apresentado ele já encerra o programa
+
+- Error são valores que representam uma condição de erro, mas não necessariamente impedem 
+  o programa de continuar sua execução
+
+- HTTP É UM PROTOCOLO DE COMUNICAÇÃO - BASE DA COMUNICAÇÃO WEB
+
+- CLIENTE (FAZ REQUISIÇÃO) - SERVIDOR (PROCESSA REQUISIÇÃO E ENVIA RESPOSTA)
+	  O cliente faz uma requisição onde o servidor vai processar essa requisição e vai devolver uma resposta
+	  Request - Response
+
+- Rotas - Identificar o tipo de mensagem que está sendo enviada e
+  identificar que tipo de processamento o servidor vai fazer em cima da mensagem
+  
+- Rotas 
+    URI - Identificador do recurso
+    Método - GET, POST, PUT, DELETE
+
+- Normalmente se utiliza rota com parametro para o Get com id ({id}), Put e para o Delete.
+
+- Quando utilizar insert into (inserir os dados) se utiliza db.Prepare.
+- Quando utilizar select (selecionar dados) se utiliza db.Query.

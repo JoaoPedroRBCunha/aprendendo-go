@@ -141,6 +141,7 @@ func registraLog(site string, status bool) {
 		arquivo.WriteString - serve para escrever no arquivo
 		time.Now().Format - faz com que você formate o tempo para o jeito que você quiser
 		time.Now().Format - verificar site para saber como formatar (https://go.dev/src/time/format.go)
+		strconv.FormatBool / strconv.FormatInt / strconv.FormatFloat - onde ele formata um tipo de dado que não é string para string
 	*/
 }
 
